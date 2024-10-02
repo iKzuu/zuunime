@@ -12,7 +12,7 @@ module.exports = {
           primary: '#EEEEEE',
           grey: '#686D76',
           darkgrey: '#373A40',
-          orange: '#DC5F00'
+          blueform: '#3559E0'
         }
       },
     },

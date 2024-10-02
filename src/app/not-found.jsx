@@ -7,7 +7,7 @@ const NoPageFound = () => {
         <div className="min-h-screen max-w-xl mx-auto flex justify-center items-center">
             <div className="flex justify-center items-center gap-4 flex-col">
                 <FileSearch size={45} className="text-color-primary"/>
-                <h3 className="text-color-orange text-4xl font-bold">NOT FOUND</h3>
+                <h3 className="text-color-blueform text-4xl font-bold">NOT FOUND</h3>
                 <Link href="/" className="">
                     <KeyReturn
                         size={45}

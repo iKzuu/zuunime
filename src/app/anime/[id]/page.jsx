@@ -9,21 +9,21 @@ const Page = async({ params: { id } }) => {
     return (
         <>
             <div className="pt-4 px-4">
-                <h3 className="text-2xl text-color-orange">{anime.data.title} - {anime.data.year}</h3>
+                <h3 className="text-2xl text-color-blueform">{anime.data.title} - {anime.data.year}</h3>
             </div>
 
             <div className="pt-4 px-4 flex gap-2 text-color-primary overflow-x-auto">
-                <div className="w-36 flex flex-col justify-center items-center rounded border border-color-orange p-2">
+                <div className="w-36 flex flex-col justify-center items-center rounded border border-color-blueform p-2">
                     <h3>Peringkat</h3>
                     <p>{anime.data.rank}</p>
                 </div>
 
-                <div className="w-36 flex flex-col justify-center items-center rounded border border-color-orange p-2">
+                <div className="w-36 flex flex-col justify-center items-center rounded border border-color-blueform p-2">
                     <h3>Score</h3>
                     <p>{anime.data.score}</p>
                 </div>
 
-                <div className="w-36 flex flex-col justify-center items-center rounded border border-color-orange p-2">
+                <div className="w-36 flex flex-col justify-center items-center rounded border border-color-blueform p-2">
                     <h3>Episode</h3>
                     <p>{anime.data.episodes}</p>
                 </div>

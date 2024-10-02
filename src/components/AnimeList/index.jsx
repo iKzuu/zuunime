@@ -12,7 +12,7 @@ const AnimeList = ({ api }) => {
                         className="
                             cursor-pointer
                             text-color-primary
-                            hover:text-color-orange
+                            hover:text-color-blueform
                             transition-all
                             relative
                             block
@@ -25,7 +25,7 @@ const AnimeList = ({ api }) => {
                                 alt="..."
                                 width={350}
                                 height={350}
-                                className="w-full h-80 object-cover"
+                                className="w-full md:h-64 h-60 object-cover"
                             />
                             <div className="absolute flex items-end inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75 pointer-events-none"
                             >

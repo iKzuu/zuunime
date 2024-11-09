@@ -3,8 +3,8 @@ import InputSearch from "./inputSearch";
 
 const Navbar = () => {
     return (
-        <header className="bg-color-blueform">
-            <div className="flex md:flex-row flex-col justify-between md:items-center p-4 gap-2">
+        <header className="bg-color-blueform md:px-96">
+            <div className="flex xl:flex-row flex-col justify-between md:items-center p-4 gap-2">
                 <Link href="/" className="font-bold text-2xl text-white">
                     ZuuNime
                 </Link>

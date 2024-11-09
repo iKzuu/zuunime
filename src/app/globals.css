@@ -24,7 +24,7 @@ img:hover {
 .loader {
   width: 45px;
   aspect-ratio: 1;
-  --c: no-repeat linear-gradient(#DC5F00 calc(50% - 10px),#dc5f0000 0 calc(50% + 10px),#DC5F00 0);
+  --c: no-repeat linear-gradient(#3559E0 calc(50% - 10px),#dc5f0000 0 calc(50% + 10px),#3559E0 0);
   background: 
     var(--c) 0%   100%,
     var(--c) 50%  100%,

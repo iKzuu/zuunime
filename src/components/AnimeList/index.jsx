@@ -19,18 +19,19 @@ const AnimeList = ({ api }) => {
                             group
                             "
                     >
-                        <div className="relative overflow-hidden rounded-md">
+                        <div className="relative overflow-hidden rounded-md w-full aspect-[2/3] max-w-xs mx-auto">
                             <Image
                                 src={anime.images.webp.image_url}
-                                alt="..."
-                                width={350}
-                                height={350}
-                                className="w-full md:h-64 h-60 object-cover"
+                                alt={anime.title}
+                                layout="fill"
+                                objectFit="cover"
+                                className="rounded-md"
                             />
                             <div className="absolute flex items-end inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75 pointer-events-none"
                             >
                                 {/* title */}
-                                <h3 className="font-bold md:text-xl text-md p-4 ">{anime.title}
+                                <h3 className="font-bold md:text-xl text-md p-4 truncate">
+                                    {anime.title}
                                 </h3>
                             </div>
                         </div>

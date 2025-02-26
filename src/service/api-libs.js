@@ -1,22 +1,51 @@
-export const getAnimeResponse = async(resource, query) => {
+export const getAnimeResponse = async (resource, query) => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/${resource}?${query}`);
     const anime = await response.json();
     return anime;
 }
 
-export const getNestedAnimeResponse = async(resource, objectProperty) => {
+export const getNestedAnimeResponse = async (resource, objectProperty) => {
     const response = await getAnimeResponse(resource);
-    return response.data.flatMap(item => item[objectProperty]);
+
+    if (Array.isArray(objectProperty)) {
+        return response.data?.flatMap((item) => processItemProperties(item, objectProperty));
+    }
+    return response.data.flatMap((item) => item[objectProperty]);
 }
 
-// randomize data
-export const randomizeData = (data, gap) => {
-    const first = ~~(Math.random() * (data.length - gap) + 1);
-    const last = first + gap;
+export const filterVoiceActors = (voiceActors) => {
+    // memfilter voice acrtors yang berbahasa jepang dahulu
+    const japaneseActors = voiceActors.filter(voiceActor => voiceActor.language === "Japanese");
 
-    const response = {
-        data: data.slice(first, last)
+    // Jika actor japanese tersedia dan lebih dari satu, kembalikan hanya actor pertama
+    if (japaneseActors.length > 0) {
+        return [japaneseActors[0]];
     }
 
-    return response;
-}
+    // Mengambil 1 dari bahasa yang terdapat voice actors, jika tidak ada actor japanese
+    const languageGroups = voiceActors.reduce((groups, actor) => {
+        if (actor.language) {
+            groups[actor.language] = groups[actor.language] || [];
+            groups[actor.language].push(actor);
+        }
+        return groups;
+    }, {});
+
+    // Mengambil actor pertama dari bahasa yang tersedia
+    return Object.values(languageGroups).length > 0
+        ? [Object.values(languageGroups)[0][0]]
+        : [];
+};
+
+export const processItemProperties = (item, objectProperties) => {
+    const result = {};
+    objectProperties.forEach((prop) => {
+        if(prop === "voice_actors") {
+            result[prop] = filterVoiceActors(item[prop]);
+        } else {
+            result[prop] = item[prop];
+        }
+    });
+
+    return result;
+};

@@ -12,7 +12,6 @@ const AnimeList = ({ api }) => {
                         className="
                             cursor-pointer
                             text-color-primary
-                            hover:text-color-blueform
                             transition-all
                             relative
                             block
@@ -21,16 +20,16 @@ const AnimeList = ({ api }) => {
                     >
                         <div className="relative overflow-hidden rounded-md w-full aspect-[2/3] max-w-xs mx-auto">
                             <Image
-                                src={anime.images.webp.image_url}
+                                src={anime.images?.webp?.image_url}
                                 alt={anime.title}
                                 layout="fill"
                                 objectFit="cover"
-                                className="rounded-md"
+                                className="rounded-md image-listanime"
                             />
                             <div className="absolute flex items-end inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75 pointer-events-none"
                             >
                                 {/* title */}
-                                <h3 className="font-bold md:text-xl text-md p-4 truncate">
+                                <h3 className="font-bold md:text-xl text-md p-4 truncate group-hover:overflow-visible group-hover:whitespace-normal transition-all duration-300">
                                     {anime.title}
                                 </h3>
                             </div>

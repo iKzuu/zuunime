@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-img {
+.image-listanime {
     transition: .3s ease all;
     -webkit-transition: .3s ease all;
     -moz-transition: .3s ease all;
@@ -16,7 +16,7 @@ img {
     -o-transition: .3s ease all;
 }
 
-img:hover {
+.image-listanime:hover {
     scale: 102%;
 }
 
@@ -37,4 +37,14 @@ img:hover {
     50%  {background-position: 0%  0%,50%  50%,100% 100%}
     66%  {background-position: 0%  0%,50%   0%,100%  50%}
     100% {background-position: 0%  0%,50%   0%,100%   0%}
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

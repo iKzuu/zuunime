@@ -1,6 +1,7 @@
 import AnimeList from "../components/AnimeList";
 import Header from "@/components/AnimeList/Header";
-import { getAnimeResponse, getNestedAnimeResponse, randomizeData, } from "../service/api-libs";
+import { getAnimeResponse, getNestedAnimeResponse } from "../service/api-libs";
+import { randomizeData } from "@/service/helpers";
 
 const Page = async () => {
 

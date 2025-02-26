@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} bg-color-darkgrey`}
+        className={`${roboto.className} bg-color-darkgrey xl:mx-52 2xl:mx-80`}
         suppressHydrationWarning={true}
       >
         <Navbar />
